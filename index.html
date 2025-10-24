@@ -1,257 +1,285 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Document Checklist — Front Page</title>
-  <style>
-    :root{
-      --bg:#f7f9fc;
-      --card:#ffffff;
-      --muted:#64748b;
-      --accent:#0ea5a4;
-      --radius:12px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    body{
-      margin:0;
-      background:var(--bg);
-      color:#0f172a;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    .container{
-      max-width:980px;
-      margin:28px auto;
-      padding:20px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:0 6px 18px rgba(15,23,42,0.06);
-      padding:20px;
-      margin-bottom:18px;
-    }
-    h1{margin:0 0 6px 0;font-size:20px;}
-    p.lead{margin:0 0 16px 0;color:var(--muted);}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-    }
-    @media (max-width:720px){ .grid{grid-template-columns:1fr;} }
-    label.block{display:block;margin-bottom:8px;font-weight:600;}
-    .small{font-size:13px;color:var(--muted);}
-    input[type="text"], input[type="number"], select, textarea{
-      width:100%;
-      padding:10px 12px;
-      border-radius:8px;
-      border:1px solid #e6edf3;
-      background:#fcfdfe;
-      box-sizing:border-box;
-      margin-bottom:12px;
-    }
-    .checkbox-list{display:flex;flex-direction:column;gap:8px;padding:8px 0;}
-    .checkbox{
-      display:flex;align-items:center;gap:10px;
-      background:#fbfdff;padding:10px;border-radius:8px;border:1px solid #f0f6fb;
-    }
-    .actions{display:flex;gap:10px;flex-wrap:wrap;}
-    button{
-      background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:0;cursor:pointer;
-      font-weight:600;
-    }
-    button.ghost{background:transparent;color:var(--accent);border:1px solid rgba(14,165,164,0.15);}
-    .summary{
-      background:#0f172a;color:#fff;padding:14px;border-radius:10px;margin-top:12px;font-size:14px;
-    }
-    .muted{color:var(--muted);font-size:13px;}
-    .add-row{display:flex;gap:8px;margin-top:6px;}
-    .doc-list{max-height:220px;overflow:auto;padding-right:6px;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheAltaf Shop - Document Services</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+  :root {
+    --primary-blue: #0a4c9a;
+    --light-gray: #f4f7f6;
+    --text-dark: #212529;
+    --text-light: #555;
+    --border-color: #e0e0e0;
+  }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--primary-blue);
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative; /* WhatsApp आइकन के लिए */
+  }
+
+  header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  /* ===== नया WhatsApp आइकन स्टाइल ===== */
+  .whatsapp-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.7rem; /* आइकन का साइज़ */
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  
+  .whatsapp-icon:hover {
+    transform: translateY(-50%) scale(1.1); /* Hover इफ़ेक्ट */
+  }
+  /* ================================= */
+
+
+  /* ---------- MAIN CONTENT ---------- */
+  main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 15px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-blue);
+    font-weight: 600;
+  }
+
+  .search-box {
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 12px 20px 12px 20px; 
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .search-box input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(10, 76, 154, 0.1);
+  }
+
+  .service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .service-item {
+    background: white;
+    border-radius: 8px;
+    padding: 16px 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-dark);
+  }
+
+  .service-item:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .service-item b {
+    color: var(--primary-blue);
+    min-width: 20px;
+    text-align: right;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    text-align: center;
+    padding: 30px 15px; /* थोड़ी ज़्यादा पैडिंग */
+    font-size: 0.9rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+  }
+  
+  /* ===== नया कॉन्टैक्ट डिटेल्स स्टाइल ===== */
+  .contact-details {
+    margin-bottom: 25px;
+  }
+  
+  .contact-details p {
+    font-size: 0.95rem; /* थोड़ा बड़ा फ़ॉन्ट */
+    color: var(--text-dark);
+    font-weight: 500;
+    margin: 10px 0;
+    display: flex; /* आइकन और टेक्स्ट को अलाइन करने के लिए */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* आइकन और टेक्स्ट के बीच गैप */
+  }
+  
+  .contact-details p i {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+  }
+  
+  .copyright-text {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color); /* एक लाइन से अलग किया */
+  }
+  /* =================================== */
+  
+</style>
 </head>
 <body>
-  <!-- phone: country code + number without + or 00 -->
-<a href="https://wa.me/+918827083076" target="_blank" rel="noopener noreferrer">
-  Chat on WhatsApp
-</a>
-  <div class="container">
-    <div class="card">
-      <h1>Document Checklist</h1>
-      <p class="lead">नीचे की form में caste, income, domestic जानकारी और संबंधित दस्तावेज़ चुनें। यह static page है — submit करने पर summary client-side दिखेगा।</p>
 
-      <form id="docForm" class="form">
-        <div class="grid">
-          <!-- Caste Section -->
-          <div class="card" style="padding:16px;">
-            <label class="block">Caste (जाति)</label>
-            <select id="caste" name="caste" required>
-              <option value="">-- चुने --</option>
-              <option>General / सामान्य</option>
-              <option>OBC</option>
-              <option>SC</option>
-              <option>ST</option>
-              <option>Other / अन्य</option>
-            </select>
+<header>
+  <img src="https://i.ibb.co/3Nn7kVt/profile-pic.jpg" alt="Profile">
+  <h1>JAY SHRI RAM COMUTER</h1>
+  
+  <a href="https://wa.me/918839142440?text=hii%20deepak" class="whatsapp-icon" target="_blank" title="Contact on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  </header>
 
-            <label class="block">Caste Certificate</label>
-            <div class="checkbox-list">
-              <label class="checkbox"><input type="checkbox" name="doc" value="Caste Certificate (PDF)"> Caste Certificate (PDF)</label>
-              <label class="checkbox"><input type="checkbox" name="doc" value="Caste Certificate (Photo)"> Caste Certificate (Photo)</label>
-            </div>
-            <div class="small muted">यदि caste "Other" चुना गया है तो अतिरिक्त दस्तावेज़ जोड़ें।</div>
-          </div>
+<main>
+  <h2>Available Document Services</h2>
 
-          <!-- Income Section -->
-          <div class="card" style="padding:16px;">
-            <label class="block">Household Monthly Income (₹)</label>
-            <input id="income" name="income" type="number" placeholder="उदा. 25000" min="0">
-
-            <label class="block">Income Proof के विकल्प</label>
-            <div class="checkbox-list">
-              <label class="checkbox"><input type="checkbox" name="doc" value="Salary Slip"> Salary Slip</label>
-              <label class="checkbox"><input type="checkbox" name="doc" value="Income Certificate"> Income Certificate</label>
-              <label class="checkbox"><input type="checkbox" name="doc" value="Bank Statement"> Bank Statement</label>
-            </div>
-            <div class="small muted">Income proof चुनें जो उपलब्ध हों — multiple चुन सकते हैं।</div>
-          </div>
-
-          <!-- Domestic Section -->
-          <div class="card" style="padding:16px;">
-            <label class="block">Domestic Status (घरेलू स्थिति)</label>
-            <select id="domestic" name="domestic">
-              <option value="">-- चुने --</option>
-              <option>Owner / मालिक</option>
-              <option>Rented / किराये पर</option>
-              <option>Relative's House / रिश्तेदार के घर</option>
-              <option>Other / अन्य</option>
-            </select>
-
-            <label class="block">Address / ठिकाना</label>
-            <input id="address" name="address" type="text" placeholder="पूरा पता">
-
-            <label class="block">Domestic Documents</label>
-            <div class="checkbox-list">
-              <label class="checkbox"><input type="checkbox" name="doc" value="Ration Card"> Ration Card</label>
-              <label class="checkbox"><input type="checkbox" name="doc" value="Electricity Bill"> Electricity Bill</label>
-              <label class="checkbox"><input type="checkbox" name="doc" value="Rent Agreement"> Rent Agreement</label>
-            </div>
-          </div>
-
-          <!-- Related Documents / Other -->
-          <div class="card" style="padding:16px;">
-            <label class="block">Related Documents (अन्य दस्तावेज़)</label>
-
-            <div class="doc-list">
-              <div class="checkbox-list">
-                <label class="checkbox"><input type="checkbox" name="doc" value="Aadhaar Card"> Aadhaar Card</label>
-                <label class="checkbox"><input type="checkbox" name="doc" value="Passport"> Passport</label>
-                <label class="checkbox"><input type="checkbox" name="doc" value="Voter ID"> Voter ID</label>
-                <label class="checkbox"><input type="checkbox" name="doc" value="PAN Card"> PAN Card</label>
-              </div>
-            </div>
-
-            <div class="add-row">
-              <input id="customDocInput" type="text" placeholder="नया दस्तावेज़ जोड़ें (उदा. Birth Certificate)">
-              <button type="button" class="ghost" id="addDocBtn">Add</button>
-            </div>
-
-            <div style="margin-top:12px;">
-              <label class="block">Notes / नोट्स</label>
-              <textarea id="notes" rows="4" placeholder="अगर कोई ख़ास बात हो तो लिखें..."></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:14px" class="actions">
-          <button type="submit">Summary देखें</button>
-          <button type="button" class="ghost" id="resetBtn">Reset</button>
-        </div>
-
-        <div id="result" style="display:none;" class="summary" aria-live="polite"></div>
-      </form>
-    </div>
-
-    <div class="card muted">
-      <strong>Instructions:</strong>
-      <ul>
-        <li>यह एक static page है — कोई data server पर नहीं भेजता।</li>
-        <li>Form का result browser में ही दिखता है। अगर server पर भेजना है तो AJAX/POST endpoint जोड़ना होगा।</li>
-        <li>Save करने के लिए इस फाइल को <code>index.html</code> नाम से रखें और GitHub Pages पर upload करें।</li>
-      </ul>
-    </div>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="सेवा खोजें (जैसे: आय, जाति, आधार...)">
   </div>
 
-  <script>
-    // छोटी JavaScript: add custom document checkbox, summary generation, reset
-    (function(){
-      const addBtn = document.getElementById('addDocBtn');
-      const customInput = document.getElementById('customDocInput');
-      const form = document.getElementById('docForm');
-      const result = document.getElementById('result');
-      const resetBtn = document.getElementById('resetBtn');
+  <div class="service-list" id="serviceList">
+    </div>
+</main>
 
-      addBtn.addEventListener('click', () => {
-        const val = customInput.value.trim();
-        if(!val) return alert('कृपया दस्तावेज़ का नाम डालें।');
-        // create a new checkbox row
-        const container = document.createElement('label');
-        container.className = 'checkbox';
-        const cb = document.createElement('input');
-        cb.type = 'checkbox';
-        cb.name = 'doc';
-        cb.value = val;
-        cb.checked = true;
-        container.appendChild(cb);
-        container.appendChild(document.createTextNode(' ' + val));
-        // append to related documents list (last .doc-list)
-        const docList = document.querySelector('.doc-list .checkbox-list');
-        if(docList) docList.appendChild(container);
-        customInput.value = '';
-      });
+<footer>
 
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // collect values
-        const caste = document.getElementById('caste').value || '—';
-        const income = document.getElementById('income').value || '—';
-        const domestic = document.getElementById('domestic').value || '—';
-        const address = document.getElementById('address').value || '—';
-        const notes = document.getElementById('notes').value || '—';
-        const docs = Array.from(form.querySelectorAll('input[name="doc"]:checked')).map(x => x.value);
-        let html = '<strong>Summary:</strong><br><br>';
-        html += `<div><strong>जाति:</strong> ${escapeHtml(caste)}</div>`;
-        html += `<div><strong>Monthly Income:</strong> ${escapeHtml(income)}</div>`;
-        html += `<div><strong>Domestic Status:</strong> ${escapeHtml(domestic)}</div>`;
-        html += `<div><strong>Address:</strong> ${escapeHtml(address)}</div>`;
-        html += `<div style="margin-top:8px"><strong>Selected Documents (${docs.length}):</strong><ul>`;
-        if(docs.length){
-          docs.forEach(d=> html += `<li>${escapeHtml(d)}</li>`);
-        } else {
-          html += '<li>कोई नहीं चुना गया</li>';
-        }
-        html += `</ul></div>`;
-        html += `<div style="margin-top:6px"><strong>Notes:</strong><div class="muted">${escapeHtml(notes)}</div></div>`;
-        result.innerHTML = html;
-        result.style.display = 'block';
-        result.scrollIntoView({behavior:'smooth'});
-      });
+  <div class="contact-details">
+    <p><i class="bi bi-telephone-fill"></i> +918839142440</p>
+    <p><i class="bi bi-geo-alt-fill"></i> Tahsheel parishad pawai,488446</p>
+  </div>
+  
+  <p class="copyright-text">
+    © <span id="year"></span> JSRC. All Rights Reserved.
+  </p>
+  
+</footer>
+<script>
+  // ===== सर्विस लिस्ट (लिंक के साथ) =====
+  const services = [
+    { name: "आय प्रमाण पत्र (Income)", link: "#" },
+    { name: "जाति प्रमाण पत्र (Caste)", link: "#" },
+    { name: "निवास प्रमाण पत्र (Domicile)", link: "#" },
+    { name: "विवाह पंजीयन (Marriage)", link: "#" },
+    { name: "जन्म प्रमाण पत्र (Birth)", link: "#" },
+    { name: "मृत्यु प्रमाण पत्र (Death)", link: "#" },
+    { name: "रजिस्ट्री (Registry)", link: "#" },
+    { name: "डायवर्सन (Diversion)", link: "#" },
+    { name: "वसीयत (Will)", link: "#" },
+    { name: "केंद्रीय जाति प्रमाण पत्र", link: "#" },
+    { name: "सभी प्रकार के शपथ पत्र", link: "#" },
+    { name: "खसरा / नक्शा", link: "#" },
+    { name: "पट्टा की सत्य प्रतिलिपि", link: "#" },
+    { name: "संबल कार्ड (Sambal Card)", link: "#" },
+    { name: "समग्र आई.डी (Samagra ID)", link: "#" },
+    { name: "आयुष्मान कार्ड (Ayushman Card)", link: "#" },
+    { name: "आधार कार्ड (Aadhaar Card)", link: "#" },
+    { name: "फोटो बनाना (Photo)", link: "#" },
+    { name: "रिकॉर्ड रूम से सत्य प्रतिलिपि", link: "#" },
+    { name: "सभी प्रकार के फॉर्म", link: "#" },
+    { name: "हकत्याग (Relinquishment)", link: "#" }
+  ];
+  // ==========================
 
-      resetBtn.addEventListener('click', () => {
-        form.reset();
-        result.style.display = 'none';
-      });
+  const listContainer = document.getElementById('serviceList');
+  const searchInput = document.getElementById('searchInput');
 
-      function escapeHtml(s){
-        if(!s) return '';
-        return String(s)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
-      }
-    })();
-  </script>
+  function renderList(filteredServices = services) {
+    listContainer.innerHTML = "";
+    
+    if (filteredServices.length === 0) {
+        listContainer.innerHTML = `<div class='service-item' style='color: #888; justify-content: center;'>कोई सेवा नहीं मिली।</div>`;
+        return;
+    }
+
+    filteredServices.forEach((service, index) => { 
+      const a = document.createElement('a');
+      a.className = 'service-item';
+      a.href = service.link; 
+      a.innerHTML = `<b>${index + 1}.</b> ${service.name}`;
+      listContainer.appendChild(a);
+    });
+  }
+
+  searchInput.addEventListener('input', () => {
+    const term = searchInput.value.toLowerCase();
+    const filtered = services.filter(service => 
+      service.name.toLowerCase().includes(term)
+    );
+    renderList(filtered);
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  renderList(); 
+</script>
+
 </body>
 </html>
